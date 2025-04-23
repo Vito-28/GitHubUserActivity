@@ -63,16 +63,17 @@ public class ManagementGitHubActivity {
         for (Object obj : eventsArray) {
             JSONObject event = (JSONObject) obj;
             String type = (String) event.get("type");
-
-            if ("PushEvent".equals(type)) {
-                JSONObject payload = (JSONObject) event.get("payload");
-                JSONArray commits = (JSONArray) payload.get("commits");
-
-                for (Object c : commits) {
+            
+            JSONObject payload = (JSONObject) event.get("payload");
+            JSONArray commits = (JSONArray) payload.get("commits");
+            
+            if(commits != null) {
+            	for (Object c : commits) {
                     JSONObject commit = (JSONObject) c;
                     System.out.println("- " + commit.get("message"));
                 }
             }
+            
         }
 	}
 	
