@@ -7,6 +7,10 @@ Articolo che descrive le funzionalità, obiettivi del progetto:
 
 https://roadmap.sh/projects/github-user-activity
 
+Articolo che descrive come ottenere dati JSON da un'API RESTful utilizzando JAVA:
+
+https://medium.com/swlh/getting-json-data-from-a-restful-api-using-java-b327aafb3751
+
 ## Requisiti
 
 - Eclipse
