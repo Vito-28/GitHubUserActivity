@@ -62,7 +62,6 @@ public class ManagementGitHubActivity {
 		System.out.println("Output: ");
         for (Object obj : eventsArray) {
             JSONObject event = (JSONObject) obj;
-            String type = (String) event.get("type");
             
             JSONObject payload = (JSONObject) event.get("payload");
             JSONArray commits = (JSONArray) payload.get("commits");
