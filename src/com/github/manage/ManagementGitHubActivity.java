@@ -18,7 +18,6 @@ public class ManagementGitHubActivity {
 	        if (getResponseCode(userName) != 200) {
 	            throw new RuntimeException("HttpResponseCode: " + getResponseCode(userName));
 	        } else {
-	            createFileJson(userName);
 	            printMessagesEvents(getEventsArray(getInline(userName)));
 	        }
 	    } catch (Exception e) {
@@ -59,11 +58,6 @@ public class ManagementGitHubActivity {
 	private JSONArray getEventsArray(String inline) throws Exception {
 	    JSONParser parser = new JSONParser();
 	    return (JSONArray) parser.parse(inline);
-	}
-
-	private void createFileJson(String userName) throws Exception {
-	    JSONArray eventsArray = getEventsArray(getInline(userName));
-	    Files.write(Paths.get("output.json"), eventsArray.toString().getBytes());
 	}
 	
 	private void printMessagesEvents(JSONArray eventsArray) {
